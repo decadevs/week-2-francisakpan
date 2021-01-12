@@ -12,9 +12,10 @@ class Implementation2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_implementation2)
 
+        // Set listener to add fragments to the screen on each button press.
         btn_add.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(
+                .replace( // Replaces a new fragment on top of a previous fragment in the backstack
                     R.id.frag_container,
                     Implementation2Fragment.newInstance(supportFragmentManager.backStackEntryCount)
                 )
@@ -22,6 +23,7 @@ class Implementation2Activity : AppCompatActivity() {
                 .commit()
         }
 
+        // Set listener to remove fragment from the screen by mimicking onBackPressed
         btn_remove.setOnClickListener {
             val fragment = supportFragmentManager.findFragmentById(R.id.frag_container)
             if (fragment != null) {

@@ -22,6 +22,10 @@ class Implementation1Activity : AppCompatActivity() {
         outState.putInt(STATE_COUNTER, count) // save the rotation count to saveInstanceState
     }
 
+    /**
+     * Show a toast on the screen displaying the various states called.
+     * @param msg "Toast message to display on the screen"
+     */
     private fun showToast(msg: String) = Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,25 +52,25 @@ class Implementation1Activity : AppCompatActivity() {
         super.onStart()
 
         //Use handler to delay setting OnStart text to state textview
-        handler.postDelayed( {
+        handler.postDelayed({
             txt_state.text = getString(R.string.onstart_text)
-        }, 1000)
+        }, 2500)
         showToast("Onstart")
     }
 
     override fun onResume() {
         super.onResume()
         //Use handler to delay setting onResume text to state textview
-        handler.postDelayed( {
+        handler.postDelayed({
             txt_state.text = getString(R.string.onresume_text)
-        }, 1500)
+        }, 3000)
         showToast("OnResume")
     }
 
     override fun onRestart() {
         super.onRestart()
         //Use handler to delay setting onRestart text to state textview
-        handler.postDelayed( {
+        handler.postDelayed({
             txt_state.text = getString(R.string.onrestart_text)
         }, 2000)
         showToast("OnRestart")
@@ -81,6 +85,7 @@ class Implementation1Activity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        //Set onDestroy state to state textview
         txt_state.text = getString(R.string.ondestroy_text)
         showToast("OnDestroy")
     }
