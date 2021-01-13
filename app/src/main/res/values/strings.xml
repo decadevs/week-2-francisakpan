@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Week 2</string>
+    <string name="implementation_2_text">Implementation 2</string>
+    <string name="implementation_1_text">Implementation 1</string>
+    <string name="oncreate_text">CREATED</string>
+    <string name="onstart_text">STARTED</string>
+    <string name="onresume_text">RESUMED</string>
+    <string name="onrestart_text">RESTARTED</string>
+    <string name="onstop_text">STOPPED</string>
+    <string name="ondestroy_text">DESTROYED</string>
+    <string name="add_text">Add</string>
+    <string name="btn_pop_text">Remove</string>
+    <string name="fragment_text_placeholder">Fragment: %d</string>
+</resources>
